@@ -7,30 +7,29 @@ import java.util.Set;
 public class Carrera {
     private Integer distancia;
     private Integer premioEnDolares;
-    private Integer nombre;
+    private String nombre;
     private Integer cantidadDeVehiculosPermitidos;
     private List<Vehiculo> listaDeVehículos;
 
-    public Carrera(Integer distancia, Integer premioEnDolares, Integer nombre, Integer cantidadDeVehiculosPermitidos) {
+
+    public Carrera(Integer distancia, Integer premioEnDolares, String nombre, Integer cantidadDeVehiculosPermitidos) {
         this.distancia = distancia;
         this.premioEnDolares = premioEnDolares;
         this.nombre = nombre;
         this.cantidadDeVehiculosPermitidos = cantidadDeVehiculosPermitidos;
-    }
-
-    private Carrera() {
         listaDeVehículos = new ArrayList<>();
     }
+
 
     //todo podría mejorar el método creando un nuevo que defina si puedo o no agregar las cantidades.
     public void darDeAltaAuto(Integer velocidad, Integer aceleracion, Integer anguloDeGuiro, String patente) {
         //contar la cantidad de vehículos que tiene la lista
         int cantidadDeVehículosAlMomento = 0;
         for (Vehiculo listaDeVehículo : listaDeVehículos) {
-            cantidadDeVehículosAlMomento++;
+            cantidadDeVehículosAlMomento = cantidadDeVehículosAlMomento+1;
         }
         //continuar si hay cupo
-        if (cantidadDeVehiculosPermitidos >= cantidadDeVehículosAlMomento) {
+        if (cantidadDeVehiculosPermitidos > cantidadDeVehículosAlMomento) {
             //llama al constructor del VehiculoAuto y le asigna los valores
             Vehiculo unVehiculo = new VehiculoAuto(velocidad, aceleracion, anguloDeGuiro, patente);
             //agrega a la lista de Vehiculos el auto asignado
