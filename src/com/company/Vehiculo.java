@@ -1,5 +1,7 @@
 package com.company;
 
+import java.util.Objects;
+
 public abstract class Vehiculo {
     private Integer velocidad;
     private Integer aceleracion;
@@ -71,4 +73,23 @@ public abstract class Vehiculo {
     public void setRuedas(Integer ruedas) {
         this.ruedas = ruedas;
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Vehiculo vehiculo = (Vehiculo) o;
+        return Objects.equals(velocidad, vehiculo.velocidad) &&
+                Objects.equals(aceleracion, vehiculo.aceleracion) &&
+                Objects.equals(anguloDeGuiro, vehiculo.anguloDeGuiro) &&
+                Objects.equals(patente, vehiculo.patente) &&
+                Objects.equals(peso, vehiculo.peso) &&
+                Objects.equals(ruedas, vehiculo.ruedas);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(velocidad, aceleracion, anguloDeGuiro, patente, peso, ruedas);
+    }
+
 }
