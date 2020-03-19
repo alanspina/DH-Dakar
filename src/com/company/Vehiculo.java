@@ -5,8 +5,24 @@ public abstract class Vehiculo {
     private Integer aceleracion;
     private Integer anguloDeGuiro;
     private String patente;
-    private Integer peso;
-    private Integer ruedas;
+    protected Integer peso;
+    protected Integer ruedas;
+
+    public Vehiculo(Integer velocidad, Integer aceleracion, Integer anguloDeGuiro, String patente, Integer peso, Integer ruedas) {
+        this.velocidad = velocidad;
+        this.aceleracion = aceleracion;
+        this.anguloDeGuiro = anguloDeGuiro;
+        this.patente = patente;
+        this.peso = peso;
+        this.ruedas = ruedas;
+    }
+
+    public Vehiculo(Integer velocidad, Integer aceleracion, Integer anguloDeGuiro, String patente) {
+        this.velocidad = velocidad;
+        this.aceleracion = aceleracion;
+        this.anguloDeGuiro = anguloDeGuiro;
+        this.patente = patente;
+    }
 
     public Integer getVelocidad() {
         return velocidad;

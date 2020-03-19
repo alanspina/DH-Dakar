@@ -9,5 +9,5 @@ public class Carrera {
     private Integer cantidadDeVehiculosPermitidos;
     private List<Vehiculo> listaDeVehículos;
 
-    
+
 }
